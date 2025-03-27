@@ -3,8 +3,7 @@
     //  -li visualizzo a pagina a pagina 
 // Appena questi numeri vengono visualizzati, far partire un timer di 30 secondi .FATTO.
     // creo funzione che indica cosa faccio in base ai secondi
-// Allo scadere dei 30 secondi, i 5 numeri scompaiono e appare imput dove inserire i numeri visualizzati precedentemente
-
+// Allo scadere dei 30 secondi, i 5 numeri scompaiono e appare imput dove inserire i numeri visualizzati precedentemente . FATTO.
 // Una volta inseriti il software dice quanti e quali dei numeri da indovinare sono stati individuati
 
 /////////// RECUPERO ELEMENTI DOM E INIZIALIZZAZIONE VARIABILI
@@ -16,7 +15,12 @@ let num =[];
 const countdown = document.getElementById(`countdown`);
 //// creo variabile che mi rappresenta i secondi
 let seconds = 30;
-
+// recupero il form contenente gli imput
+const answersform = document.getElementById(`answers-form`)
+// recupero gli imput per inserire i numeri
+const formcontrol = document.querySelectorAll(`.form-control`)
+// recupero il pulsante conferma
+const button = document.querySelector(`.btn`)
 
 
 /////////// CORPO PROGRAMMA
@@ -40,10 +44,14 @@ const interval = setInterval(function(){
     else{
         clearInterval(interval);
         // faccio scomparire i numeri alla fine del countdown
-        numberslist.className = numberslist.classList+" d-none"
+        numberslist.className = numberslist.classList+" d-none"     
+        // faccio scomparire il countdown alla fine dei 30 secondi
         countdown.className = countdown.classList+" d-none"
+        // faccio comparire il form per inserire i visualizzati
+        answersform.className ="d-inline"
     }
 },1000)
 
 //// visualizzo in html
 countdown.innerText = seconds
+
