@@ -14,7 +14,7 @@ let num =[];
 //// dove verrà visualizzato il countdown
 const countdown = document.getElementById(`countdown`);
 //// creo variabile che mi rappresenta i secondi
-let seconds = 30;
+let seconds = 4;
 // recupero il form contenente gli imput
 const answersform = document.getElementById(`answers-form`)
 // recupero gli imput per inserire i numeri
@@ -25,8 +25,8 @@ const button = document.querySelector(`.btn`)
 
 /////////// CORPO PROGRAMMA
 //// per generare i 5 numeri casuali
-for(i=0;i<5;i++){
-    generoNum = Math.floor(Math.random()*100);
+for(let i=0;i<5;i++){
+    let generoNum = Math.floor(Math.random()*50);
     num.push(generoNum)
     console.log(num)
 }
@@ -43,6 +43,7 @@ const interval = setInterval(function(){
     }
     else{
         clearInterval(interval);
+        console.log(formcontrol[0].value)
         // faccio scomparire i numeri alla fine del countdown
         numberslist.className = numberslist.classList+" d-none"     
         // faccio scomparire il countdown alla fine dei 30 secondi
@@ -54,4 +55,17 @@ const interval = setInterval(function(){
 
 //// visualizzo in html
 countdown.innerText = seconds
+// console.log(`come si fa${num}`)
 
+button.addEventListener(`click`, function(){
+    // console.log(`come si fxxxa${formcontrol}`)
+    for(let i=0;i<num.length;i++){
+        if(formcontrol[i].value===num[i].value){
+            console.log(`bravo`)
+            }
+            else{
+                console.log(`no`)
+            }
+        }
+    })
+    
