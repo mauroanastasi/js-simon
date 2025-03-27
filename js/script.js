@@ -30,8 +30,15 @@ numberslist.innerHTML= num
 const interval = setInterval(function(){
     // decremento i secondi
     seconds--
-    console.log(seconds)
-    countdown.innerText = seconds
+    // cosa faccio in base ai secondi
+    if(seconds != -1){
+        // mostro i secondi in pagina
+        countdown.innerText = seconds
+    }
+    else{
+        clearInterval(interval);
+    }
 },1000)
+
 //// visualizzo in html
 countdown.innerText = seconds
