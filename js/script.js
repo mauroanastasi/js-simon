@@ -5,7 +5,7 @@
 // Allo scadere dei 30 secondi, i 5 numeri scompaiono e appare imput dove inserire i numeri visualizzati precedentemente
 // Una volta inseriti il software dice quanti e quali dei numeri da indovinare sono stati individuati
 
-// RECUPERO ELEMENTI DOM E INIZIALIZZAZIONE VARIABILI
+/////////// RECUPERO ELEMENTI DOM E INIZIALIZZAZIONE VARIABILI
 //// dove verranno visuallizati i numeri
 const numberslist = document.getElementById(`numbers-list`);
 //// array dei numeri che compariranno
@@ -17,7 +17,7 @@ let seconds = 30;
 
 
 
-// CORPO PROGRAMMA
+/////////// CORPO PROGRAMMA
 //// per generare i 5 numeri casuali
 for(i=0;i<5;i++){
     generoNum = Math.floor(Math.random()*100);
@@ -31,4 +31,7 @@ const interval = setInterval(function(){
     // decremento i secondi
     seconds--
     console.log(seconds)
+    countdown.innerText = seconds
 },1000)
+//// visualizzo in html
+countdown.innerText = seconds
