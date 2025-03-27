@@ -7,13 +7,18 @@
 
 // RECUPERO ELEMENTI DOM E INIZIALIZZAZIONE VARIABILI
 //// dove verranno visuallizati i numeri
-const numberslist = document.getElementById(`numbers-list`)
-//// dove verrà visualizzato il countdown
-const countdown = document.getElementById(`countdown`)
+const numberslist = document.getElementById(`numbers-list`);
 //// array dei numeri che compariranno
 let num =[];
+//// dove verrà visualizzato il countdown
+const countdown = document.getElementById(`countdown`);
+//// creo variabile che mi rappresenta i secondi
+let seconds = 30;
 
-// per generare i 5 numeri casuali
+
+
+// CORPO PROGRAMMA
+//// per generare i 5 numeri casuali
 for(i=0;i<5;i++){
     generoNum = Math.floor(Math.random()*100);
     num.push(generoNum)
@@ -21,9 +26,9 @@ for(i=0;i<5;i++){
 }
 numberslist.innerHTML= num
 
-
-
-
-setTimeout(function(){
-
-},30000)
+//// per il coutdown
+const interval = setInterval(function(){
+    // decremento i secondi
+    seconds--
+    console.log(seconds)
+},1000)
