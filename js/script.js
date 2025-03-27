@@ -14,7 +14,7 @@ let num =[];
 //// dove verrà visualizzato il countdown
 const countdown = document.getElementById(`countdown`);
 //// creo variabile che mi rappresenta i secondi
-let seconds = 4;
+let seconds = 7;
 // recupero il form contenente gli imput
 const answersform = document.getElementById(`answers-form`)
 // recupero gli imput per inserire i numeri
@@ -58,14 +58,19 @@ countdown.innerText = seconds
 // console.log(`come si fa${num}`)
 
 button.addEventListener(`click`, function(){
-    // console.log(`come si fxxxa${formcontrol}`)
+    // creo variabile di controllo
+    let risultato = true
+    // ciclo l'array num e lo confronto con i numeri inseriti
     for(let i=0;i<num.length;i++){
-        if(formcontrol[i].value===num[i].value){
-            console.log(`bravo`)
+        if(formcontrol[i].value==num[i]){
+            // se sono uguali
+            console.log(risultato)   
+            break     
             }
             else{
-                console.log(`no`)
+            // altrimenti
+            console.log(`no`)
+            break
             }
         }
     })
-    
