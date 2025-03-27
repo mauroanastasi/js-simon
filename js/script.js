@@ -14,13 +14,15 @@ let num =[];
 //// dove verrà visualizzato il countdown
 const countdown = document.getElementById(`countdown`);
 //// creo variabile che mi rappresenta i secondi
-let seconds = 7;
+let seconds = 12;
 // recupero il form contenente gli imput
 const answersform = document.getElementById(`answers-form`)
 // recupero gli imput per inserire i numeri
 const formcontrol = document.querySelectorAll(`.form-control`)
 // recupero il pulsante conferma
 const button = document.querySelector(`.btn`)
+// recupero dove verrà visualizzato il messaggio
+const message = document.getElementById(`message`)
 
 
 /////////// CORPO PROGRAMMA
@@ -39,7 +41,7 @@ const interval = setInterval(function(){
     // cosa faccio in base ai secondi
     if(seconds != -1){
         // mostro i secondi in pagina
-        countdown.innerText = seconds
+        countdown.innerText = (`il tuo tempo scade tra ${seconds} sec`)
     }
     else{
         clearInterval(interval);
@@ -57,19 +59,22 @@ const interval = setInterval(function(){
 countdown.innerText = seconds
 // console.log(`come si fa${num}`)
 
-button.addEventListener(`click`, function(){
+button.addEventListener(`click`, function(event){
+    event.preventDefault();
     // creo variabile di controllo
     let risultato = true
     // ciclo l'array num e lo confronto con i numeri inseriti
     for(let i=0;i<num.length;i++){
         if(formcontrol[i].value==num[i]){
             // se sono uguali
-            console.log(risultato)   
+            console.log(risultato)
+            message.innerText = (`HAI VINTO COMPLIMENTI!!`)  
             break     
             }
             else{
             // altrimenti
-            console.log(`no`)
+            risultato = false
+            message.innerText = (`mi dispiace ma hai perso ti consiglio di aprire il file js e aumentare il tempo a tua disposizione`)
             break
             }
         }
