@@ -1,7 +1,7 @@
 // Far visualizzare 5 numeri casuali .FATTO.
     //  -genero i 5 numeri con for, MathFloor e Random
     //  -li visualizzo a pagina a pagina 
-// Appena questi numeri vengono visualizzati, far partire un timer di 30 secondi
+// Appena questi numeri vengono visualizzati, far partire un timer di 30 secondi .FATO.
 // Allo scadere dei 30 secondi, i 5 numeri scompaiono e appare imput dove inserire i numeri visualizzati precedentemente
 // Una volta inseriti il software dice quanti e quali dei numeri da indovinare sono stati individuati
 
@@ -37,6 +37,8 @@ const interval = setInterval(function(){
     }
     else{
         clearInterval(interval);
+        // faccio scomparire i numeri alla fine del countdown
+        numberslist.className = numberslist.classList+" d-none"
     }
 },1000)
 
